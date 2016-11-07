@@ -31,7 +31,6 @@ class listener():
     return update
 
   def parse_order(self, order):
-    print("recieved order: {}".format(order))
 
     # simple ping
     if (order == ping_message):
