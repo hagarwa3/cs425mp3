@@ -4,6 +4,7 @@ import random
 import socket
 import struct
 import time
+import sys
 
 from config import *
 from disseminator import *
@@ -38,7 +39,7 @@ class user_input():
     o1, o2, o3 = [self.name]*3
     if (len(self.member_list) >= 3):
       o1, o2, o3 = random.sample(self.member_list, 3)
-    send_update('{} {} {} {} {}'.format(sdfs_fn, o1, o2, o3, data), 'p', self.member_list)
+    send_update('{} {} {} {} {}'.format(sdfs_fn, o1, o2, o3, data), 'z', self.member_list)
 
   def delete(self, sdfs_fn):
     send_update(sdfs_fn, 'd', self.member_list)
@@ -53,6 +54,7 @@ class user_input():
 
   def get_inputs(self):
     order = raw_input()
+    print('got input = {}'.format(order))
     order_type = order.split()[0]
     if (order_type == "put"):
       local_fn, sdfs_fn = order.split()[1:]

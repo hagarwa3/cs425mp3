@@ -1,4 +1,4 @@
-'''
+
 target_machines = [
   'fa16-cs425-g22-01.cs.illinois.edu',
   'fa16-cs425-g22-02.cs.illinois.edu',
@@ -16,6 +16,7 @@ target_machines = [
 target_machines = [
   'wirelessprv-10-193-165-145.near.illinois.edu'
 ]
+'''
 
 introducer_port = 57500
 disseminator_port = 57501
@@ -31,8 +32,8 @@ execution_ack_string = "ack\r\n"
 arg_length_size = 4 
 
 # This is the machine that will be our introducer
-# introducer_hostname = 'fa16-cs425-g22-01.cs.illinois.edu'
-introducer_hostname = 'wirelessprv-10-193-165-145.near.illinois.edu'
+introducer_hostname = 'fa16-cs425-g22-01.cs.illinois.edu'
+#ntroducer_hostname = 'wirelessprv-10-193-165-145.near.illinois.edu'
 
 # Creates a string of predefined size containing the length of socket message.
 def length_padder(length):

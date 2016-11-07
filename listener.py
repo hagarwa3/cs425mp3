@@ -68,7 +68,7 @@ class listener():
         return
 
     # Respond to a PUT
-    elif(order[0] == 'p'):
+    elif(order[0] == 'z'):
       order_details = order[1:]
       sdfs_fn, o1, o2, o3, data = order_details.split()
       owners = [o1, o2, o3]
