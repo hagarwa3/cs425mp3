@@ -25,7 +25,7 @@ class user_input():
   def get(self, sdfs_fn, local_fn):
     local_file = open(sdfs_fn, 'r')
     data = local_file.read()
-    for owner in sdfs_owners[sdfs_fn]:
+    for owner in self.sdfs_owners[sdfs_fn]:
       if owner in self.member_list:
         send_update(self.name, 'g', [owner])
     local_file_w = open(local_fn, 'w')
@@ -45,11 +45,11 @@ class user_input():
     send_update(sdfs_fn, 'd', self.member_list)
 
   def ls(self, sdfs_fn):
-    print(sdfs_owners[sdfs_fn])
+    print(self.sdfs_owners[sdfs_fn])
 
   def store(self):
-    for file_name in sdfs_owners.keys():
-      if self.name in sdfs_owners[file_name]:
+    for file_name in self.sdfs_owners.keys():
+      if self.name in self.sdfs_owners[file_name]:
         print(file_name)
 
   def get_inputs(self):
