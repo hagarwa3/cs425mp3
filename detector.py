@@ -33,7 +33,7 @@ class detector():
       #neighbours.remove(self.name)
       return neighbours
     neighbours = set()
-    nn = len(member_list)
+    nn = len(self.member_list)
     neighbours.add(self.member_list[(index-2)%nn])
     neighbours.add(self.member_list[(index-1)%nn])
     neighbours.add(self.member_list[(index+1)%nn])
