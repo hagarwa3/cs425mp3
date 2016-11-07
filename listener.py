@@ -26,13 +26,15 @@ class listener():
     # print("Listening for updates on:")
     # print("host:{} port:{}".format(socket.gethostname(), listener_port))
     update, updater_address = self.server_socket.recvfrom(4096)
-    #print("Update from {}: {}".format(updater_address, update))
+    if (update != 'p'):
+      print("Update from {}: {}".format(updater_address, update))
     self.server_socket.sendto(execution_ack_string, updater_address)
     return update
 
   def parse_order(self, order):
 
     # simple ping
+
     if (order == ping_message):
       return
 
