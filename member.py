@@ -47,7 +47,7 @@ def introducer_runner():
 
 def user_input_runner():
   global member_list, sdfs_owners_map, keep_running
-  user_inputs = user_input()
+  user_inputs = user_input(member_list, {}, {}, sdfs_owners)
   print("ready for input")
   while(keep_running):
     user_inputs.get_inputs()
