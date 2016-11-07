@@ -33,10 +33,11 @@ class detector():
       #neighbours.remove(self.name)
       return neighbours
     neighbours = set()
-    neighbours.add(self.member_list[index-2])
-    neighbours.add(self.member_list[index-1])
-    neighbours.add(self.member_list[index+1])
-    neighbours.add(self.member_list[index+2])
+    nn = len(member_list)
+    neighbours.add(self.member_list[(index-2)%nn])
+    neighbours.add(self.member_list[(index-1)%nn])
+    neighbours.add(self.member_list[(index+1)%nn])
+    neighbours.add(self.member_list[(index+2)%nn])
     return neighbours
 
   def ping_neighbours(self):
